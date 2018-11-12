@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ListOut</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+  </head>
+
+  <body>
+    <div style="text-align: right;">
+      <% if user_signed_in? %>
+        <b><%= current_user.try(:email) %></b>
+        <b><%= link_to "Logout", destroy_user_session_path, "data-method": "delete" %></b>
+      <% end %>
+    </div>
+    <%= yield %>
+    <%= javascript_include_tag 'application' %>
+    <%= custom_bootstrap_flash %>
+  </body>
+</html>

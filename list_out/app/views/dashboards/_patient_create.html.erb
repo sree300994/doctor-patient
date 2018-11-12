@@ -1,0 +1,8 @@
+<%= form_tag(dashboards_patient_create_path, method: :post) do %>
+
+	<%= text_field_tag :name, nil, placeholder: 'Enter your Name', style: 'border-radius: 4px;' %> <br/><br/>
+
+	<%= text_field_tag :mobile, nil, placeholder: 'Enter your Mobile Number', style: 'border-radius: 4px;' %> <br/><br/>
+
+	<%= submit_tag "Submit", class: "btn btn-success" %>
+<% end %>
